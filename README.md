@@ -1,2 +1,2 @@
 # Rust-book-course
-#### A rapository for sending rust oficial book
+#### A repository for sending rust oficial book
