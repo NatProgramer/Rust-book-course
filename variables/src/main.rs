@@ -19,7 +19,7 @@ fn shadows() {
     let x: u8 = 15;
     
     {
-        let x = x * 2;
+        let x: u8 = x * 2;
         println!("The value of x in the inner scope is: {x}");
     }
     
