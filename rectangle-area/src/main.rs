@@ -1,19 +1,53 @@
-struct Rectangle { base: f32, height: f32 }
-fn main() {
+use std::process::exit;
 
-    let rectangle1 = &Rectangle {
-        base: 40.0,
-        height: 30.0,
-    };
-
-    println!("{}", find_rectangle_area(
-        rectangle1,
-        "m"
-    ));
+struct Rectangle { 
+    base: u32,
+    height: u32 
 }
 
-fn find_rectangle_area(rectangle: &Rectangle, measure: &str) -> String {
-    let area: String = format!("{} {measure}", rectangle.base * rectangle.height);
+impl Rectangle {
+    fn area(&self, measure: &str) -> String {
+        if measure.len() == 0 {
+            eprintln!(
+                "Error: You try calculate area of Rectangle without measure"
+            );
+            exit(0)
+        }
 
-    area
+        format!("{}{measure}", self.base * self.height)
+    }
+}
+
+fn main() {
+    let rectangle1 = Rectangle {
+        base: 10,
+        height: 20,
+    };
+
+    let rectangle2 = Rectangle {
+        base: 30,
+        height: 40,
+    };
+
+    let rectangle3 = Rectangle {
+        base: 35,
+        height: 45,
+    };
+
+    let rectangle4 = Rectangle {
+        base: 50,
+        height: 65,
+    };
+
+    println!("{}", rectangle1.area("mm"));
+    println!();
+
+    println!("{}", rectangle2.area("cm"));
+    println!();
+
+    println!("{}", rectangle3.area("m"));
+    println!();
+
+    println!("{}", rectangle4.area("km"));
+
 }
