@@ -2,10 +2,10 @@ fn main() {
     let fahrenheit_temp: f32 = celsius_to_fahrenheit(-273.15);
     let celcius_temp: f32 = fahrenheit_to_celsius(fahrenheit_temp);
     
-    println!("Celsius to fahrenheit conversion start");
+    println!("Celsius to fahrenheit convertion start");
     println!("{}°F", fahrenheit_temp);
 
-    println!("Fahrenheit to celsius conversion start");
+    println!("Fahrenheit to celsius convertion start");
     println!("{}°C", celcius_temp);
 }
 
